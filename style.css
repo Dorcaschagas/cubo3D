@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #232b2b;
+}
+
+input{
+    display: none;
+}
+
+input{
+    display: relative;
+    z-index: 10;
+}
+
+input[value="top"]:checked ~ .container .cube{
+    transform: rotateX(-45deg) rotateY(17deg);
+}
+input[value="button"]:checked ~ .container .cube{
+    transform: rotateX(45deg) rotateY(17deg);
+}
+input[value="left"]:checked ~ .container .cube{
+    transform: rotateX(-17deg) rotateY(80deg);
+}
+input[value="right"]:checked ~ .container .cube{
+    transform: rotateX(-17deg) rotateY(-80deg);
+}
+
+input[value="left"]:checked ~ #l-left,
+input[value="right"]:checked ~ #l-right,
+input[value="top"]:checked ~ #l-top,
+input[value="button"]:checked ~ #l-button{
+    background-color: red;
+}
+
+
+label{
+    position: fixed;
+    display: block;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #dc3c24;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+label:hover{
+    background-color: #dc3d2452;
+}
+#l-left{
+    left: 16px;
+}
+
+#l-right{
+    right: 16px;
+}
+
+#l-top{
+    top: 16px;
+}
+
+#l-button{
+    bottom: 16px;
+}
+
+
+.container{
+    width: 200px;
+    height: 200px;
+    perspective: 1000px;
+}
+
+.cube{
+    position: relative;
+    transform-style:preserve-3d ;
+    width: 100%;
+    height: 100%;
+    transition: transform .5s linear;
+}
+
+.face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+}
+
+.front{
+    background-color: red;
+    transform: rotateX(0deg) translateZ(100px);
+}
+
+.back{
+    background-color:orange;
+    transform: rotateX(180deg) translateZ(100px);
+
+}
+
+.right{
+    background-color:yellow;
+    transform: rotateY(90deg) translateZ(100px)
+
+}
+
+.left{
+    background-color:green;
+    transform: rotateY(-90deg) translateZ(100px);
+
+
+}
+
+.top{
+    background-color:blue;
+    transform: rotateX(90deg) translateZ(100px)
+
+    
+}
+
+.button{
+    background-color:pink;
+    transform: rotateX(-90deg) translateZ(100px);
+
+}
