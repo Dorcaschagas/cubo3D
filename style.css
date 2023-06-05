@@ -8,7 +8,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #232b2b;
+    background-color: #3e5151c9;
 }
 
 input{
@@ -21,17 +21,21 @@ input{
 }
 
 input[value="top"]:checked ~ .container .cube{
-    transform: rotateX(-45deg) rotateY(17deg);
-}
-input[value="button"]:checked ~ .container .cube{
-    transform: rotateX(45deg) rotateY(17deg);
-}
-input[value="left"]:checked ~ .container .cube{
-    transform: rotateX(-17deg) rotateY(80deg);
+    transform: rotateX(45deg) rotateY(35deg);
 }
 input[value="right"]:checked ~ .container .cube{
-    transform: rotateX(-17deg) rotateY(-80deg);
+    transform: rotateX(135deg) rotateY(45deg);
+    
 }
+input[value="button"]:checked ~ .container .cube{
+
+    transform: rotateX(-35deg) rotateY(45deg);
+}
+input[value="left"]:checked ~ .container .cube{
+    
+    transform: rotateX(45deg) rotateY(135deg);
+}
+
 
 input[value="left"]:checked ~ #l-left,
 input[value="right"]:checked ~ #l-right,
@@ -46,9 +50,9 @@ label{
     display: block;
     width: 50px;
     height: 50px;
-    border: 2px solid #dc3c24;
+    border: 2px solid #0f0f0f;
     cursor: pointer;
-    border-radius: 3px;
+    border-radius: 50px;
 }
 
 label:hover{
@@ -93,23 +97,31 @@ label:hover{
 }
 
 .front{
+    display: flex;
+    flex-direction: column;
     background-color: red;
     transform: rotateX(0deg) translateZ(100px);
 }
 
 .back{
+    display: flex;
+    flex-direction: column;
     background-color:orange;
     transform: rotateX(180deg) translateZ(100px);
 
 }
 
 .right{
+    display: flex;
+    flex-direction: column;
     background-color:yellow;
     transform: rotateY(90deg) translateZ(100px)
 
 }
 
 .left{
+    display: flex;
+    flex-direction: column;
     background-color:green;
     transform: rotateY(-90deg) translateZ(100px);
 
@@ -117,14 +129,34 @@ label:hover{
 }
 
 .top{
-    background-color:blue;
+    display: flex;
+    flex-direction: column;
+    background-color:white;
     transform: rotateX(90deg) translateZ(100px)
 
     
 }
 
 .button{
-    background-color:pink;
+    display: flex;
+    flex-direction: column;
+    background-color:blue;
     transform: rotateX(-90deg) translateZ(100px);
+}
 
+table{
+    display: flex;
+
+}
+tr{
+    display: flex;
+}
+
+td{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid;
+    width: 65px;
+    height: 65px;
 }
